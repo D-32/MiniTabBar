@@ -103,7 +103,6 @@ public class MiniTabBar: UIView {
     }
     self.currentSelectedIndex = selectedIndex
 
-    let itemView = self.itemViews[selectedIndex]
     for (index, v) in self.itemViews.enumerated() {
       v.setSelected((index == selectedIndex), animated: animated)
     }
