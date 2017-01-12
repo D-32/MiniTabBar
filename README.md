@@ -5,6 +5,8 @@
 # MiniTabBar
 A clean simple alternative to the UITabBar. Only shows the title when being tapped on. Gives the app a way cleaner look :)
 
+<img src="animation.gif" width="275">
+
 ## Setup
 
 ```ruby
