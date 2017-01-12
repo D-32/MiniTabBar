@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MiniTabBar_Example' do
+  pod 'MiniTabBar', :path => '../'
+
+  target 'MiniTabBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
