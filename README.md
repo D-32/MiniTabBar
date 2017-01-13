@@ -1,3 +1,5 @@
+
+[![Swift Version][swift-image]][swift-url]
 [![Version](https://img.shields.io/cocoapods/v/MiniTabBar.svg?style=flat)](http://cocoadocs.org/docsets/MiniTabBar)
 ![License](https://img.shields.io/cocoapods/l/MiniTabBar.svg?style=flat)
 [![twitter: @dylan36032](http://img.shields.io/badge/twitter-%40dylan36032-blue.svg?style=flat)](https://twitter.com/dylan36032)
@@ -7,11 +9,20 @@ A clean simple alternative to the UITabBar. Only shows the title when being tapp
 
 <img src="animation.gif" width="275">
 
-## Setup
+## Requirements
+- iOS 8.0+
+- Xcode 8
+
+## Installation
+
+####CocoaPods:
+You can use [CocoaPods](http://cocoapods.org/) to install `MiniTabBar` by adding it to your `Podfile`:
 
 ```ruby
 pod 'MiniTabBar'
 ```	
+#### Manually
+Drag and drop `MiniTabBar.swift` and `MiniTabBarItemView.swift` into your project.
 
 ## Usage
 
@@ -53,3 +64,6 @@ tabBar.backgroundColor = UIColor.black
 tabBar.backgroundBlurEnabled = false
 tabBar.keyLine.isHidden = true
 ```
+
+[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-url]: https://swift.org/
