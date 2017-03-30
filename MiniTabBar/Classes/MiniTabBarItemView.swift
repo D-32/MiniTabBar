@@ -73,9 +73,6 @@ class MiniTabBarItemView: UIView {
     
     func setSelected(_ selected: Bool, animated: Bool = true) {
         self.selected = selected
-        if !self.item.selectable {
-            return
-        }
         self.iconView.tintColor = selected ? self.tintColor : UIColor(white: 0.6, alpha: 1.0)
         
         if (animated && selected) {
