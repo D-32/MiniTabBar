@@ -103,6 +103,9 @@ public class MiniTabBar: UIView {
     }
     
     public func selectItem(_ selectedIndex: Int, animated: Bool = true) {
+        if !self.itemViews[selectedIndex].item.selectable {
+            return
+        }
         if (selectedIndex == self.currentSelectedIndex) {
             return
         }
