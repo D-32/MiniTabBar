@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MiniTabBar'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Clean and simple UITabBar alternative'
 
   s.description      = <<-DESC
