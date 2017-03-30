@@ -64,6 +64,23 @@ tabBar.backgroundColor = UIColor.black
 tabBar.backgroundBlurEnabled = false
 tabBar.keyLine.isHidden = true
 ```
+### Custom View
+
+It's also possible to have a custom view that doesn't act like a tab. For example a (+) button in the middle.
+
+<img src="customButton.png" width="275">
+
+```swift
+let customButton = UIButton()
+customButton.backgroundColor = UIColor.orange
+customButton.frame.size = CGSize(width: 50, height: 50)
+let customItem = MiniTabBarItem(customView: customButton, 
+                                    offset: UIOffset(horizontal: 0, 
+                                                       vertical: -10))
+customItem.selectable = false
+items.append(customItem)
+```
+
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
 [swift-url]: https://swift.org/
