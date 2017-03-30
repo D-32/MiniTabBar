@@ -10,11 +10,18 @@ import Foundation
 import UIKit
 
 public class MiniTabBarItem {
-    var title: String
-    var icon: UIImage
+    var title: String?
+    var icon: UIImage?
+    var customView: UIView?
+    var offset = UIOffset.zero
+    public var selectable: Bool = true
     public init(title: String, icon:UIImage) {
         self.title = title
         self.icon = icon
+    }
+    public init(customView: UIView, offset: UIOffset = UIOffset.zero) {
+        self.customView = customView
+        self.offset = offset
     }
 }
 
@@ -48,8 +55,6 @@ public class MiniTabBar: UIView {
         }
     }
     
-    public var itemWidth: CGFloat = 100.0
-    
     fileprivate var itemViews = [MiniTabBarItemView]()
     fileprivate var currentSelectedIndex: Int?
     
@@ -65,7 +70,7 @@ public class MiniTabBar: UIView {
         
         var i = 0
         for item in items {
-            let itemView = MiniTabBarItemView(title: item.title, icon: item.icon)
+            let itemView = MiniTabBarItemView(item)
             itemView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MiniTabBar.itemTapped(_:))))
             self.itemViews.append(itemView)
             self.addSubview(itemView)
@@ -84,9 +89,9 @@ public class MiniTabBar: UIView {
         visualEffectView.frame = self.bounds
         keyLine.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 1)
         
-        let spacing = Int((frame.size.width - (CGFloat(self.itemViews.count) * itemWidth)) / CGFloat(self.itemViews.count + 1))
+        let itemWidth = self.frame.width / CGFloat(self.itemViews.count)
         for (i, itemView) in self.itemViews.enumerated() {
-            let x = CGFloat(spacing * (i+1)) + (itemWidth * CGFloat(i))
+            let x = itemWidth * CGFloat(i)
             itemView.frame = CGRect(x: x, y: 0, width: itemWidth, height: frame.size.height)
         }
     }
