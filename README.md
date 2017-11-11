@@ -10,7 +10,7 @@ A clean simple alternative to the UITabBar. Only shows the title when being tapp
 <img src="animation.gif" width="275">
 
 ## Requirements
-- iOS 8.0+
+- iOS 10.0+
 - Xcode 8
 
 ## Installation
@@ -40,9 +40,9 @@ tabBar.delegate = self
 self.view.addSubview(tabBar)
 
 let constraints = [
-    tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-    tabBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-    tabBar.heightAnchor.constraint(equalToConstant: 44),
+	tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+	tabBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+	tabBar.heightAnchor.constraint(equalToConstant: 44),
 ]
 NSLayoutConstraint.activate(constraints)
 
