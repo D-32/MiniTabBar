@@ -15,7 +15,7 @@ A clean simple alternative to the UITabBar. Only shows the title when being tapp
 
 ## Installation
 
-####CocoaPods:
+#### CocoaPods:
 You can use [CocoaPods](http://cocoapods.org/) to install `MiniTabBar` by adding it to your `Podfile`:
 
 ```ruby
