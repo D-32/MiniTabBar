@@ -46,6 +46,7 @@ class MiniTabBarItemView: UIView {
                 titleLabel.font = self.defaultFont
                 titleLabel.textColor = self.tintColor
                 titleLabel.textAlignment = .center
+                titleLabel.alpha = 0.0
                 self.addSubview(titleLabel)
             }
             
@@ -93,9 +94,12 @@ class MiniTabBarItemView: UIView {
              */
             UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions(), animations: {
                 self.titleLabel.frame.origin.y = 28
+                self.titleLabel.alpha = 1.0
             }, completion: { finished in
                 UIView.animate(withDuration: 0.2, delay: 0.5, options: UIViewAnimationOptions(), animations: {
                     self.titleLabel.frame.origin.y = self.frame.size.height
+                    self.titleLabel.alpha = 0.0
+                }, completion: { finished in
                 })
             })
         }

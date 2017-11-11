@@ -57,11 +57,14 @@ public class MiniTabBar: UIView {
     
     fileprivate var itemViews = [MiniTabBarItemView]()
     fileprivate var currentSelectedIndex: Int?
+    fileprivate let bg = UIView()
     
     public init(items: [MiniTabBarItem]) {
         super.init(frame: CGRect.zero)
         
-        self.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        
+        bg.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        addSubview(bg)
         
         self.addSubview(visualEffectView)
         
@@ -86,7 +89,8 @@ public class MiniTabBar: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        visualEffectView.frame = self.bounds
+        bg.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 1000)
+        visualEffectView.frame = bg.bounds
         keyLine.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 1)
         
         let itemWidth = self.frame.width / CGFloat(self.itemViews.count)
@@ -95,7 +99,7 @@ public class MiniTabBar: UIView {
             itemView.frame = CGRect(x: x, y: 0, width: itemWidth, height: frame.size.height)
         }
     }
-    
+
     func itemTapped(_ gesture: UITapGestureRecognizer) {
         let itemView = gesture.view as! MiniTabBarItemView
         let selectedIndex = self.itemViews.index(of: itemView)!
@@ -112,7 +116,8 @@ public class MiniTabBar: UIView {
         self.currentSelectedIndex = selectedIndex
         
         for (index, v) in self.itemViews.enumerated() {
-            v.setSelected((index == selectedIndex), animated: animated)
+            let selected = (index == selectedIndex)
+            v.setSelected(selected, animated: animated)
         }
         
         self.delegate?.tabSelected(selectedIndex)

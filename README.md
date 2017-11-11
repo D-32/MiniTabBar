@@ -35,9 +35,16 @@ items.append(MiniTabBarItem(title: "Tab Name", icon: <UIImage>))
 
 // Create a MiniTabBar instance and add it as a regular subview:
 let tabBar = MiniTabBar(items: items)
+tabBar.translatesAutoresizingMaskIntoConstraints = false
 tabBar.delegate = self
-tabBar.frame = CGRect(x: 0, y: self.view.frame.height - 44, width: self.view.frame.width, height: 44)
 self.view.addSubview(tabBar)
+
+let constraints = [
+    tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+    tabBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+    tabBar.heightAnchor.constraint(equalToConstant: 44),
+]
+NSLayoutConstraint.activate(constraints)
 
 // Delegate protocol:
 func tabSelected(_ index: Int) {

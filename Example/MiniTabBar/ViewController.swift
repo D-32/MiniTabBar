@@ -23,9 +23,16 @@ class ViewController: UIViewController, MiniTabBarDelegate {
         items.append(MiniTabBarItem(title: "Profile", icon: #imageLiteral(resourceName: "tab2")))
         items.append(MiniTabBarItem(title: "Tickets", icon: #imageLiteral(resourceName: "tab3")))
         let tabBar = MiniTabBar(items: items)
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
         tabBar.delegate = self
-        tabBar.frame = CGRect(x: 0, y: self.view.frame.height - 44, width: self.view.frame.width, height: 44)
         self.view.addSubview(tabBar)
+        
+        let constraints = [
+            tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            tabBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            tabBar.heightAnchor.constraint(equalToConstant: 44),
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
     
     private func createCustomItemTabBar() {
@@ -43,9 +50,16 @@ class ViewController: UIViewController, MiniTabBarDelegate {
         
         items.append(MiniTabBarItem(title: "Tickets", icon: #imageLiteral(resourceName: "tab3")))
         let tabBar = MiniTabBar(items: items)
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
         tabBar.delegate = self
-        tabBar.frame = CGRect(x: 0, y: self.view.frame.height - 44, width: self.view.frame.width, height: 44)
         self.view.addSubview(tabBar)
+        
+        let constraints = [
+            tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            tabBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            tabBar.heightAnchor.constraint(equalToConstant: 44),
+            ]
+        NSLayoutConstraint.activate(constraints)
     }
     
     func tabSelected(_ index: Int) {

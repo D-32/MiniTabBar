@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MiniTabBar'
-  s.version          = '1.0.2'
+  s.version          = '1.1.0'
   s.summary          = 'Clean and simple UITabBar alternative'
 
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ Written in Swift 3 this UITabBar alternative has a much cleaner look. Titles are
   s.source           = { :git => 'https://github.com/d-32/MiniTabBar.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/dylan36032'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'MiniTabBar/Classes/**/*'
 end
