@@ -100,7 +100,7 @@ public class MiniTabBar: UIView {
         }
     }
 
-    func itemTapped(_ gesture: UITapGestureRecognizer) {
+    @objc func itemTapped(_ gesture: UITapGestureRecognizer) {
         let itemView = gesture.view as! MiniTabBarItemView
         let selectedIndex = self.itemViews.index(of: itemView)!
         self.selectItem(selectedIndex)
